@@ -105,7 +105,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
 
           <header className='content-header'>
             <a 
-              href='/characters/my-app/build/index.html#/characters/'
+              href='/Characters-app/#/characters/#/'
               className='home-page__logo'
               onClick={handlerReturnToMainPage}
             >
