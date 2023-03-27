@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Characters-app/static/css/main.1a19f3aa.css",
-    "main.js": "/Characters-app/static/js/main.e667809f.js",
+    "main.js": "/Characters-app/static/js/main.648036d6.js",
     "static/media/logo.png": "/Characters-app/static/media/logo.1169ced27a00bfcad56d.png",
     "index.html": "/Characters-app/index.html",
     "main.1a19f3aa.css.map": "/Characters-app/static/css/main.1a19f3aa.css.map",
-    "main.e667809f.js.map": "/Characters-app/static/js/main.e667809f.js.map"
+    "main.648036d6.js.map": "/Characters-app/static/js/main.648036d6.js.map"
   },
   "entrypoints": [
     "static/css/main.1a19f3aa.css",
-    "static/js/main.e667809f.js"
+    "static/js/main.648036d6.js"
   ]
 }
