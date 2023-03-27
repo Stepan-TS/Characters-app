@@ -40,6 +40,8 @@ const Characters: React.FC<Props> = ({ userName }) => {
     ?  Number(localStorage.getItem('currentPage'))
     :  firstPage;
 
+  const getUserName = localStorage.getItem('userName') || '';
+
   const checkIsNewQuery = newQuery !== null;
 
   const handlerChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -50,6 +52,10 @@ const Characters: React.FC<Props> = ({ userName }) => {
     window.localStorage.setItem('currentPage', JSON.stringify(String(firstPage)))
     window.location.reload();
   }
+
+  useEffect(() => {
+    window.localStorage.setItem('userName', JSON.stringify(userName));
+  }, [userName]);
 
   useEffect(() => {
     if (visiableCharacters.length < (countCardsOfPage + 1)) {
@@ -99,7 +105,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
       <div className='home-page__content'>
         <section className='content'>
           <UserMenu 
-            userName={userName} 
+            userName={getUserName} 
             setQuery={setQuery}
           />
 
