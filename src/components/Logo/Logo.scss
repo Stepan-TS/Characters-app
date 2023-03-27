@@ -1,0 +1,24 @@
+@import './../../utils/Mixins.scss';
+@import './../../utils/Variables.scss';
+
+.logo {
+    @include rectangle($-card-width, $-logo-heigth);
+  
+    margin-bottom: 30px;
+    
+    @include onTablet {
+      @include rectangle($-logo-width-tablet, $-logo-heigth-tablet);
+      
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      @include rectangle($-logo-width-desktop, $-logo-heigth-desktop);
+    }
+  
+    transition: $-transition-2;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+}

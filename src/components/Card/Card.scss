@@ -1,0 +1,35 @@
+@import './../../utils/Variables.scss';
+@import './../../utils/Mixins.scss';
+
+.card {
+  border-radius: $-card-border-radius;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+
+  transition: $-transition-2;
+  
+  &-image {
+    border-top-left-radius: $-card-border-radius;
+    border-top-right-radius: $-card-border-radius;
+    @include rectangle($-image-list-page-width, $-image-list-page-heigth);
+  }
+  &-info {
+    padding: 5px 16px;
+
+    &__name {
+      @include medium-text;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__species {
+      @include small-text;
+      font-size: 14px;
+      line-height: 21px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

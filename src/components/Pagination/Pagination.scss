@@ -1,0 +1,31 @@
+@import './../../utils/Mixins.scss';
+@import './../../utils/Variables.scss';
+
+.pagination-box {
+  @include center;
+
+  margin-bottom: 20px;
+}
+
+.pagination-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  
+    transition: $-transition-2;
+  
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+  
+  &__link {
+    font-size: 20px;
+    color: black;
+  }
+}
+

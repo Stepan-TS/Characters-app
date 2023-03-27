@@ -1,0 +1,34 @@
+@import './../../../utils/Mixins.scss';
+@import './../../../utils/Variables.scss';
+
+.characteristic {
+  transition: $-transition-3;
+  
+  .field {
+    padding: 9px 0 0 16px;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &-name {
+      @include bold-text;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      color: #081F32;
+    }
+
+    &-content {
+      @include small-text;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.25px;
+      color: #6E798C;
+
+      padding-bottom: 12px;
+    }
+  }
+
+  .box {
+    border-bottom: 1px solid rgb(218, 212, 212);
+  }
+}

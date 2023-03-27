@@ -1,0 +1,28 @@
+@import './../../utils/Mixins.scss';
+
+.home-page {
+  position: relative;
+
+  .user-menu {
+    @include onMobile {
+      position: static;
+    }
+    position: absolute;
+    top:50px;
+    right: 10px;
+
+    @include onDesktop {
+      top:50px;
+      right: 30px;
+    }
+    
+    @include center;
+    flex-direction: column;
+    align-items: center;
+  
+    &__text {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}

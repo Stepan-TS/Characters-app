@@ -1,0 +1,55 @@
+@import './../../utils/Mixins.scss';
+@import './../../utils/Variables.scss';
+
+.character-details {
+  @include onTablet {
+    width: 40%;
+  }
+  
+  &__image {
+    @include center;
+    margin: 0 auto;
+
+    @include circle($-image-details-side);
+    border: 5px solid #F2F2F7;
+
+    margin-bottom: 16px;
+
+    transition: $-transition-2;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    text-align: center;
+    @include small-text;
+    font-size: 48px;
+    line-height: 56px;
+
+    @include center;
+    margin: 0 auto 30px;
+
+    transition: $-transition-2;
+
+    &:hover {
+      color: rgb(157, 152, 152);
+    }
+  }
+
+  &__info {
+    @include medium-text;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #8E8E93;
+    text-align: center;
+
+    margin-bottom: 30px;
+  }
+}
+
+.character-details__box {
+  margin: 20px 20px 20px;
+}

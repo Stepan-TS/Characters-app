@@ -1,0 +1,40 @@
+@import './../../../utils/Mixins.scss';
+@import './../../../utils/Variables.scss';
+
+.button-auth {
+    @include center;
+    align-items: center;
+  
+    width: 100%;
+    height: 56px;
+
+    padding: 0 30px;
+
+    @include onDesktop {
+      padding: 5px 50px;
+    }
+
+  
+    @include bold-text;
+    font-size: 16px;
+    line-height: 27px;
+    color:rgb(22, 194, 131);
+  
+    background: rgb(255, 254, 254);
+    border-radius: 40px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: $-transition-2;
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.4);
+    }
+
+    &:focus {
+        box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.64);
+      }
+
+}  

@@ -1,0 +1,25 @@
+@import './../../utils/Mixins.scss';
+
+.character-page {  
+  @include center;
+  
+  @include onTablet {
+    display: flex;
+    align-items: center;
+  }
+  
+  position: relative;
+  padding-top: 50px;
+  @include onTablet {
+    padding-top: 0;
+  }
+
+  &__button {
+    position: absolute;
+    left: 30px;
+    @include onTablet {
+      left: 50px;
+    }
+    top: 25px;
+  }
+}

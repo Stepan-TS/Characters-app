@@ -1,0 +1,19 @@
+@import '../../utils/Variables.scss';
+@import '../../utils/Mixins.scss';
+
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(1, $-card-width);
+
+  @include onTablet {
+    grid-template-columns: repeat(2, $-card-width);
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(4, $-card-width);
+  }
+
+  gap: $-card-gap;
+
+  justify-content: center;
+}

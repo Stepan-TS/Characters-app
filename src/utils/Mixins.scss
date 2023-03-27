@@ -1,0 +1,58 @@
+@mixin onMobile {
+  @media (max-width: 743px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+  
+@mixin onTablet {
+  @media (min-width: 744px) {
+    @content;
+  }
+}
+
+@mixin bold-text {
+  font-weight: 700;
+}
+  
+@mixin medium-text {
+  font-weight: 500;
+}
+  
+@mixin small-text {
+  font-weight: 400;
+}
+
+@mixin button-text {
+  font-family: 'Karla';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin square ($a) {
+  width: $a;
+  height: $a;
+}
+
+@mixin rectangle($a, $b) {
+  width: $a;
+  height: $b;
+}
+
+@mixin circle($d) {
+  width: $d;
+  height: $d;
+  border-radius: 50%;
+}

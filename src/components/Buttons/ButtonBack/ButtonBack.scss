@@ -1,0 +1,26 @@
+@import './../../../utils/Mixins.scss';
+@import './../../../utils/Variables.scss';
+
+.back-navigation {
+  display: flex;
+  align-items: center;
+
+  background-color: white;
+  border: none;
+  
+  &__img {
+    @include square($-back-btn-icon-side);
+
+    margin-right: 12px;
+  }
+
+  &__text {
+   @include button-text;
+  }
+
+  transition: $-transition-2;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
