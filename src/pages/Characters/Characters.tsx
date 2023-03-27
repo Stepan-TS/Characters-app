@@ -83,12 +83,6 @@ const Characters: React.FC<Props> = ({ userName }) => {
   }, [newQuery])
 
   useEffect(() => {
-    if (checkIsNewQuery && getQuery) {
-      setNewQuery(JSON.parse(getQuery));
-    } 
-  }, [getQuery])
-
-  useEffect(() => {
     if (getCurrentPage && getCurrentPage > firstPage) {
       setCurrentPage(getCurrentPage);
     } 
