@@ -19,9 +19,9 @@ const UserMenu: React.FC<Props> = (props) => {
 
   const navigate = useNavigate();
   
-  const getUserName = sessionStorage.getItem('userName');
+  const getUserName = sessionStorage.getItem('userName') || '';
   const newUserName = userName
-    ? JSON.parse(userName)
+    ? userName
     : getUserName
 
   const handlerGreetingUser = greetingUser(newUserName);
