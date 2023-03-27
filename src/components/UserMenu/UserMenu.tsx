@@ -5,7 +5,7 @@ import './UserMenu.scss';
 
 import ButtonAuth from '../Buttons/ButtonAuth/ButtonAuth';
 
-import { greetingUser } from '../../helpers/heplerFunction';
+import { greetingUser, userNameValidationCheck } from '../../helpers/heplerFunction';
 import { ButtonAuthText } from '../../types';
 
 type Props = {
@@ -22,11 +22,11 @@ const UserMenu: React.FC<Props> = (props) => {
   const getUserName = sessionStorage.getItem('userName') || '';
   const newUserName = userName
     ? userName
-    : getUserName
+    : userNameValidationCheck(getUserName)
 
   const handlerGreetingUser = greetingUser(newUserName);
 
-  const handlerSignOut = () => {
+  const handleSignOut = () => {
     sessionStorage.clear();
     navigate('/login')
   };
@@ -37,7 +37,7 @@ const UserMenu: React.FC<Props> = (props) => {
 
       <div 
         className='user-menu__button'
-        onClick={handlerSignOut}
+        onClick={handleSignOut}
       >
         <ButtonAuth ButtonAuthText={ButtonAuthText.SignOut} />
       </div>

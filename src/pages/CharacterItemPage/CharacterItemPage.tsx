@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import './CharacterItemPage.scss';
 
-import { Character } from '../../types';
-import { useParams } from 'react-router-dom';
 import Details from '../../components/Details/Details';
 import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack';
+
+import { Character } from '../../types';
 import { getCharacterByID } from '../../api/api';
 
 
@@ -25,7 +27,7 @@ const CharacterItemPage: React.FC = () => {
       </div>
 
       <Details character={character} />
-  </div>
+    </div>
   )
 }
 

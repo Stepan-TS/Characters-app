@@ -7,9 +7,9 @@ import { signInWithPopup } from 'firebase/auth';
 import './../Login/Login.scss';
 
 import Logo from '../../components/Logo/Logo';
+import ButtonAuth from '../../components/Buttons/ButtonAuth/ButtonAuth';
 
 import { ButtonAuthText } from '../../types';
-import ButtonAuth from '../../components/Buttons/ButtonAuth/ButtonAuth';
 
 type Props = {
   setUserName: Function;

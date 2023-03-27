@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-const AuthRoute = (props: any) => {
+import { AuthRouteProps } from "../../types";
+
+const AuthRoute: React.FC<AuthRouteProps> = (props) => {
   const { children } = props;
   const auth = getAuth();
   const navigate = useNavigate();
@@ -25,10 +27,8 @@ const AuthRoute = (props: any) => {
 
   if (loading) return <p>Loading...</p>
 
-  console.log(children)
-
   return (
-    <div>
+    <div className="auth-route">
       {children}
     </div>
   )

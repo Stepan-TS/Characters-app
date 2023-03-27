@@ -42,20 +42,20 @@ const Characters: React.FC<Props> = ({ userName }) => {
 
   const checkIsNewQuery = newQuery !== null;
 
-  const handlerChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
   }
 
-  useEffect(() => {
-    if (userName.length > 1) {
-      window.sessionStorage.setItem('userName', JSON.stringify(userName));
-    }
-  }, [userName]);
-
-  const handlerReturnToMainPage = () => {
+  const handleReturnToMainPage = () => {
     window.sessionStorage.setItem('currentPage', JSON.stringify(String(firstPage)))
     window.location.reload();
   }
+
+  useEffect(() => {
+    if (userName) {
+      window.sessionStorage.setItem('userName', JSON.stringify(userName));
+    }
+  }, [userName]);
 
   useEffect(() => {
     if (visiableCharacters.length < (countCardsOfPage + 1)) {
@@ -81,7 +81,6 @@ const Characters: React.FC<Props> = ({ userName }) => {
     }
   }, [query, currentPage])
 
-
   useEffect(() => {
     if (checkIsNewQuery) {
       setQuery(newQuery);
@@ -100,7 +99,6 @@ const Characters: React.FC<Props> = ({ userName }) => {
     } 
   }, [])
 
-
   return (
     <div className='home-page'>
       <div className='home-page__content'>
@@ -113,7 +111,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
             <a 
               href='/Characters-app/#/characters/#/'
               className='home-page__logo'
-              onClick={handlerReturnToMainPage}
+              onClick={handleReturnToMainPage}
             >
               <Logo />
             </a>
@@ -135,7 +133,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
                 defaultValue={newQuery || ''}
                 name="search"
                 placeholder="Filter by name..."
-                onChange={handlerChange}
+                onChange={handleChange}
               />
             </label>
           </form>
