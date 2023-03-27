@@ -1,5 +1,6 @@
 $-card-width: 220px;
 $-card-gap: 20px;
+$-count-card-in-row: 4;
 
 $-card-border-radius: 4px;
 
@@ -27,3 +28,6 @@ $-image-list-page-heigth: 150px;
 $-image-list-page-width: 220px;
 
 $-image-details-side: 250px;
+
+$-width-content: ($-card-width * $-count-card-in-row)
+  + ($-card-gap * ($-count-card-in-row - 1));

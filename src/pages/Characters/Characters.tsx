@@ -12,6 +12,7 @@ import { getCharacters } from '../../api/api';
 import { Character } from '../../types';
 
 import SearchIcon from '../../image/search.png';
+import NoResults from '../../components/NoResults/NoResults';
 
 type Props = {
   userName: string;
@@ -138,7 +139,11 @@ const Characters: React.FC<Props> = ({ userName }) => {
             </label>
           </form>
 
-          <CardList characters={currentRecords} />
+          {currentRecords.length !==0 
+            ?  <CardList characters={currentRecords} />
+            :  <NoResults />
+          }
+          
         </section>
         
         <section className='pagination'>
@@ -148,6 +153,8 @@ const Characters: React.FC<Props> = ({ userName }) => {
             setCurrentPage={setCurrentPage}
           />
         </section>
+
+        
       </div>
     </div>
   )

@@ -21,6 +21,10 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include onDesktop {
+      min-width: $-width-content;
+    }
+
     @include onMobile {
       width: 80%;
     }

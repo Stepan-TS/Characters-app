@@ -1,0 +1,10 @@
+@import './../../utils/Mixins.scss';
+
+.no-results {
+  padding-top: 50px;
+  text-align: center;
+
+  @include bold-text;
+  font-size: 30px;
+  color:rgb(22, 194, 131);
+}
