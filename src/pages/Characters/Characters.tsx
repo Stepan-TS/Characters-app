@@ -83,7 +83,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
   }, [newQuery])
 
   useEffect(() => {
-    if (checkIsNewQuery) {
+    if (checkIsNewQuery && getQuery) {
       setNewQuery(JSON.parse(getQuery));
     } 
   }, [getQuery])
