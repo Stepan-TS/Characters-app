@@ -99,7 +99,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
       setCurrentPage(getCurrentPage);
     } 
   }, [])
-  
+  console.log(getUserName);
   return (
     <div className='home-page'>
       <div className='home-page__content'>

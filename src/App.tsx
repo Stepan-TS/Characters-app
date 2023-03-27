@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
 
 import './App.scss';
@@ -15,6 +15,10 @@ export const Firebase = initializeApp(config.firebaseConfig);
 
 const App = () => {
   const [userName, setUserName] = useState<string>('');
+
+  useEffect(() => {
+    window.localStorage.setItem('userName', JSON.stringify(userName));
+  }, [userName]);
   
   return (
     <HashRouter>
