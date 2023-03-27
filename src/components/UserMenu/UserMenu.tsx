@@ -10,24 +10,25 @@ import { ButtonAuthText } from '../../types';
 
 type Props = {
   userName: string;
-  setQuery: Function;
 };
 
 const UserMenu: React.FC<Props> = (props) => {
   const {
     userName,
-    setQuery,
   } = props;
 
   const navigate = useNavigate();
-  const handlerGreetingUser = greetingUser(userName);
-  const handlerSignOut = () => {
-    setQuery('');
-    window.localStorage.setItem('currentPage', JSON.stringify('1'));
+  
+  const getUserName = sessionStorage.getItem('userName');
+  const newUserName = userName
+    ? JSON.parse(userName)
+    : getUserName
 
-    setTimeout(()=> {
-      navigate('/login')
-    }, 100);
+  const handlerGreetingUser = greetingUser(newUserName);
+
+  const handlerSignOut = () => {
+    sessionStorage.clear();
+    navigate('/login')
   };
   
   return (

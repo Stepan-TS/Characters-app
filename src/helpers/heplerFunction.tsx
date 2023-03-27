@@ -23,6 +23,8 @@ export function filterByName(characters: Character[], query: string): Character[
 
 export function greetingUser(user: string): string {
   const userName = user.split(' ')[0];
+  
+  console.log(userName);
  
   return `Hello ${userName}!`;
 }

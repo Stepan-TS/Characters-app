@@ -16,9 +16,7 @@ export const Firebase = initializeApp(config.firebaseConfig);
 const App = () => {
   const [userName, setUserName] = useState<string>('');
 
-  useEffect(() => {
-    window.localStorage.setItem('userName', JSON.stringify(userName));
-  }, [userName]);
+  
   
   return (
     <HashRouter>

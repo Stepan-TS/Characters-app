@@ -34,13 +34,11 @@ const Characters: React.FC<Props> = ({ userName }) => {
   const currentRecords = visiableCharacters.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(visiableCharacters.length / recordsPerPage)
 
-  const getQuery = localStorage.getItem('query') || '';
+  const getQuery = sessionStorage.getItem('query') || '';
   
-  const getCurrentPage = localStorage.getItem('currentPage')
-    ?  Number(localStorage.getItem('currentPage'))
+  const getCurrentPage = sessionStorage.getItem('currentPage')
+    ?  Number(sessionStorage.getItem('currentPage'))
     :  firstPage;
-
-  const getUserName = localStorage.getItem(userName) || '';
 
   const checkIsNewQuery = newQuery !== null;
 
@@ -48,8 +46,14 @@ const Characters: React.FC<Props> = ({ userName }) => {
     setQuery(event.target.value)
   }
 
+  useEffect(() => {
+    if (userName.length > 1) {
+      window.sessionStorage.setItem('userName', JSON.stringify(userName));
+    }
+  }, [userName]);
+
   const handlerReturnToMainPage = () => {
-    window.localStorage.setItem('currentPage', JSON.stringify(String(firstPage)))
+    window.sessionStorage.setItem('currentPage', JSON.stringify(String(firstPage)))
     window.location.reload();
   }
 
@@ -69,11 +73,11 @@ const Characters: React.FC<Props> = ({ userName }) => {
 
   useEffect(() => {
     if (checkIsNewQuery && query.length !== newQuery.length) {
-      window.localStorage.setItem('query', JSON.stringify(query));
+      window.sessionStorage.setItem('query', JSON.stringify(query));
     }
 
     if (currentPage >= firstPage) {
-      window.localStorage.setItem('currentPage', JSON.stringify(currentPage));
+      window.sessionStorage.setItem('currentPage', JSON.stringify(currentPage));
     }
   }, [query, currentPage])
 
@@ -85,7 +89,7 @@ const Characters: React.FC<Props> = ({ userName }) => {
   }, [newQuery])
 
   useEffect(() => {
-    if (checkIsNewQuery) {
+    if (checkIsNewQuery && getQuery) {
       setNewQuery(JSON.parse(getQuery));
     } 
   }, [getQuery])
@@ -96,16 +100,13 @@ const Characters: React.FC<Props> = ({ userName }) => {
     } 
   }, [])
 
-  console.log(userName)
-  console.log(getUserName);
 
   return (
     <div className='home-page'>
       <div className='home-page__content'>
         <section className='content'>
           <UserMenu 
-            userName={getUserName} 
-            setQuery={setQuery}
+            userName={userName} 
           />
 
           <header className='content-header'>
