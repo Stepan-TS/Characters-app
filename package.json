@@ -1,5 +1,6 @@
 {
   "name": "characters-app",
+  "homepage": "https://Stepan-TS.github.io/Characters-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
