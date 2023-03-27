@@ -33,7 +33,7 @@ const Pagination: React.FC<Props> = (props) => {
               <a 
                 className="pagination-content__link" 
                 onClick={prevPage} 
-                href='#'
+                href='/characters/'
               >
                 <AiFillCaretLeft />
               </a>
@@ -45,7 +45,7 @@ const Pagination: React.FC<Props> = (props) => {
                   <a 
                     onClick={() => setCurrentPage(pgNumber)}  
                     className='pagination-content__link'
-                    href='#'
+                    href='/characters/'
                   >
                     {pgNumber}
                   </a>
@@ -56,7 +56,7 @@ const Pagination: React.FC<Props> = (props) => {
               <a 
                 className="pagination-content__link" 
                 onClick={nextPage}
-                href='#'
+                href='/characters/'
               >
                 <AiFillCaretRight />
               </a>
